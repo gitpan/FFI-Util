@@ -1,0 +1,58 @@
+{
+   "abstract" : "Some useful pointer utilities when writing FFI modules",
+   "author" : [
+      "Graham Ollis <plicease@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 5.012, CPAN::Meta::Converter version 2.133380",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "FFI-Util",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::CChecker" : "0",
+            "Module::Build" : "0.3601"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Exporter::Tidy" : "0",
+            "FFI::Raw" : "0.27",
+            "Math::Int64" : "0",
+            "Module::Build" : "0.3601",
+            "base" : "0",
+            "perl" : "5.008"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/plicease/ffi-util/issues"
+      },
+      "homepage" : "http://perl.wdlabs.com/FFI-Util/",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/plicease/ffi-util.git",
+         "web" : "https://github.com/plicease/ffi-util"
+      }
+   },
+   "version" : "0.02"
+}
+

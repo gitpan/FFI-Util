@@ -8,7 +8,7 @@ use lib qw{inc}; use My::ModuleBuild;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.3601"
+    "Module::Build" => "0.4005"
   },
   "configure_requires" => {
     "ExtUtils::CChecker" => 0,
@@ -19,7 +19,7 @@ my %module_build_args = (
     "Graham Ollis <plicease\@cpan.org>"
   ],
   "dist_name" => "FFI-Util",
-  "dist_version" => "0.02",
+  "dist_version" => "0.03",
   "license" => "perl",
   "module_name" => "FFI::Util",
   "recommends" => {},
@@ -28,9 +28,9 @@ my %module_build_args = (
     "Exporter::Tidy" => 0,
     "FFI::Raw" => "0.27",
     "Math::Int64" => 0,
-    "Module::Build" => "0.3601",
+    "Module::Build" => "0.4005",
     "base" => 0,
-    "perl" => "5.008"
+    "perl" => "v5.10.0"
   },
   "script_files" => [],
   "test_requires" => {
@@ -40,7 +40,7 @@ my %module_build_args = (
 
 
 my %fallback_build_requires = (
-  "Module::Build" => "0.3601",
+  "Module::Build" => "0.4005",
   "Test::More" => 0
 );
 

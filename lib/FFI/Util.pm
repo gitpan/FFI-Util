@@ -3,6 +3,7 @@ package FFI::Util;
 use strict;
 use warnings;
 use constant;
+use v5.10;
 use Config (); # TODO: way to get dlext without loading this
 use FFI::Raw 0.27;
 use Scalar::Util qw( refaddr );
@@ -17,7 +18,7 @@ use Exporter::Tidy
 ;
 
 # ABSTRACT: Some useful pointer utilities when writing FFI modules
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 
 
@@ -69,7 +70,7 @@ foreach my $type (our @types)
   
   foreach my $otype (qw( size_t time_t dev_t gid_t uid_t ))
   {
-    if(_lookup_type($otype) eq $type)
+    if((_lookup_type($otype)//'') eq $type)
     {
       no strict 'refs';
       *{"deref_$otype\_get"} = \&{"deref_$type\_get"};
@@ -104,7 +105,7 @@ FFI::Util - Some useful pointer utilities when writing FFI modules
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

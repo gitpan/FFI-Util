@@ -16,7 +16,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.3601"
+            "Module::Build" : "0.4005"
          }
       },
       "configure" : {
@@ -30,9 +30,9 @@
             "Exporter::Tidy" : "0",
             "FFI::Raw" : "0.27",
             "Math::Int64" : "0",
-            "Module::Build" : "0.3601",
+            "Module::Build" : "0.4005",
             "base" : "0",
-            "perl" : "5.008"
+            "perl" : "v5.10.0"
          }
       },
       "test" : {
@@ -53,6 +53,6 @@
          "web" : "https://github.com/plicease/ffi-util"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
 

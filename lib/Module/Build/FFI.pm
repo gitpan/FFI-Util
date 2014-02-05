@@ -10,7 +10,7 @@ use File::Copy qw( copy cp );
 use File::Basename qw( basename );
 
 # ABSTRACT: Build Perl extensions if C with FFI.
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 
 sub new
@@ -128,7 +128,7 @@ Module::Build::FFI - Build Perl extensions if C with FFI.
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

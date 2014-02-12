@@ -18,7 +18,7 @@ use Exporter::Tidy
 ;
 
 # ABSTRACT: Some useful pointer utilities when writing FFI modules
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 
 
@@ -36,6 +36,10 @@ sub locate_module_share_lib (;$)
   {
     $modlibname =~ s,[\\/][^\\/]+$,,;
     $file = "$modlibname/arch/auto/$modpname/$modfname.$Config::Config{dlext}";
+  }
+  if($^O eq 'cygwin' && $FFI::Raw::VERSION eq '0.27')
+  {
+    return Cygwin::posix_to_win_path($file);
   }
   $file;
 };
@@ -105,7 +109,7 @@ FFI::Util - Some useful pointer utilities when writing FFI modules
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 

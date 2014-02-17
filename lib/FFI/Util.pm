@@ -5,7 +5,7 @@ use warnings;
 use constant;
 use v5.10;
 use Config (); # TODO: way to get dlext without loading this
-use FFI::Raw 0.27;
+use FFI::Raw 0.28;
 use Scalar::Util qw( refaddr );
 use Exporter::Tidy
   deref => do {
@@ -18,7 +18,7 @@ use Exporter::Tidy
 ;
 
 # ABSTRACT: Some useful pointer utilities when writing FFI modules
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 
 
@@ -36,10 +36,6 @@ sub locate_module_share_lib (;$)
   {
     $modlibname =~ s,[\\/][^\\/]+$,,;
     $file = "$modlibname/arch/auto/$modpname/$modfname.$Config::Config{dlext}";
-  }
-  if($^O eq 'cygwin' && $FFI::Raw::VERSION eq '0.27')
-  {
-    return Cygwin::posix_to_win_path($file);
   }
   $file;
 };
@@ -109,7 +105,7 @@ FFI::Util - Some useful pointer utilities when writing FFI modules
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 

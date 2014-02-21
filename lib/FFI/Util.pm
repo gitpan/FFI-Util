@@ -18,7 +18,7 @@ use Exporter::Tidy
 ;
 
 # ABSTRACT: Some useful pointer utilities when writing FFI modules
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 
 
@@ -105,7 +105,7 @@ FFI::Util - Some useful pointer utilities when writing FFI modules
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 

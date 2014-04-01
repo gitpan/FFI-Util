@@ -4,7 +4,7 @@ NAME
 
 VERSION
 
-    version 0.06
+    version 0.07
 
 SYNOPSIS
 
@@ -372,7 +372,11 @@ FUNCTIONS
     Alias for appropriate derf_..._set if uid_t is provided by your
     compiler.
 
-    */
+SEE ALSO
+
+    Module::Build::FFI
+
+    FFI::Raw
 
 AUTHOR
 

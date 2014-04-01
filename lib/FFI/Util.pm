@@ -18,7 +18,7 @@ use Exporter::Tidy
 ;
 
 # ABSTRACT: Some useful pointer utilities when writing FFI modules
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 
 
@@ -105,7 +105,7 @@ FFI::Util - Some useful pointer utilities when writing FFI modules
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -462,7 +462,15 @@ Alias for appropriate C<derf_..._get> if uid_t is provided by your compiler.
 
 Alias for appropriate C<derf_..._set> if uid_t is provided by your compiler.
 
-*/
+=head1 SEE ALSO
+
+=over 4
+
+=item L<Module::Build::FFI>
+
+=item L<FFI::Raw>
+
+=back
 
 =cut
 

@@ -13,7 +13,7 @@ use File::ShareDir qw( dist_dir );
 use Text::ParseWords qw(shellwords);
 
 # ABSTRACT: Build Perl extensions if C with FFI.
-our $VERSION = '0.06'; # VERSION
+our $VERSION = '0.07'; # VERSION
 
 
 sub new
@@ -140,7 +140,7 @@ Module::Build::FFI - Build Perl extensions if C with FFI.
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
@@ -211,6 +211,20 @@ The appropriate attribute needed to export functions from shared libraries
 Visual C++, but it may be necessary elsewhere in the future.
 
 =back
+
+=head1 SEE ALSO
+
+=over 4
+
+=item L<FFI::Util>
+
+=item L<FFI::Raw>
+
+=item L<Module::Build>
+
+=back
+
+=cut
 
 =head1 AUTHOR
 

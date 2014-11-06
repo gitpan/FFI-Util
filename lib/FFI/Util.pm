@@ -3,7 +3,7 @@ package FFI::Util;
 use strict;
 use warnings;
 use constant;
-use v5.10;
+use 5.010;
 use Config (); # TODO: way to get dlext without loading this
 use FFI::Raw 0.28;
 use Scalar::Util qw( refaddr );
@@ -18,7 +18,7 @@ use Exporter::Tidy
 ;
 
 # ABSTRACT: Some useful pointer utilities when writing FFI modules
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 
 
@@ -58,14 +58,16 @@ foreach my $type (our @types)
   my $code_type = eval qq{ FFI::Raw::$type };
   do {
     my $name = "deref_$type\_get";
+    my $ffi = FFI::Raw->new( $lib, $name, $code_type, FFI::Raw::ptr );
     no strict 'refs';
-    *{$name} = FFI::Raw->new( $lib, $name, $code_type, FFI::Raw::ptr )->coderef;
+    *{$name} = sub { FFI::Raw::call($ffi, @_) };
   };
   
   do {
     my $name = "deref_$type\_set";
+    my $ffi = FFI::Raw->new( $lib, $name, FFI::Raw::void, FFI::Raw::ptr, $code_type );
     no strict 'refs';
-    *{$name} = FFI::Raw->new( $lib, $name, FFI::Raw::void, FFI::Raw::ptr, $code_type )->coderef;
+    *{$name} = sub { FFI::Raw::call($ffi, @_) };
   };
   
   foreach my $otype (qw( size_t time_t dev_t gid_t uid_t ))
@@ -80,15 +82,21 @@ foreach my $type (our @types)
 }
 
 
+use constant _incantation => 
+  $^O eq 'MSWin32' && $Config::Config{archname} =~ /MSWin32-x64/
+  ? 'Q'
+  : 'L!';
+
+
 sub scalar_to_buffer ($)
 {
-  (unpack('L!', pack 'P', $_[0]), do { use bytes; length $_[0] });
+  (unpack(_incantation, pack 'P', $_[0]), do { use bytes; length $_[0] });
 }
 
 
 sub buffer_to_scalar ($$)
 {
-  unpack 'P'.$_[1], pack 'L!', defined $_[0] ? $_[0] : 0;
+  unpack 'P'.$_[1], pack _incantation, defined $_[0] ? $_[0] : 0;
 }
 
 1;
@@ -105,7 +113,7 @@ FFI::Util - Some useful pointer utilities when writing FFI modules
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 

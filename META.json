@@ -4,7 +4,7 @@
       "Graham Ollis <plicease@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.014, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Dist::Zilla version 5.023, CPAN::Meta::Converter version 2.142690",
    "license" : [
       "perl_5"
    ],
@@ -23,7 +23,8 @@
          "requires" : {
             "ExtUtils::CChecker" : "0",
             "File::ShareDir" : "0",
-            "Module::Build" : "0.3601"
+            "Module::Build" : "0.3601",
+            "perl" : "5.006"
          }
       },
       "runtime" : {
@@ -34,27 +35,28 @@
             "Math::Int64" : "0",
             "Module::Build" : "0.4005",
             "base" : "0",
-            "perl" : "v5.10.0"
+            "perl" : "5.010"
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0"
+            "Test::More" : "0.94",
+            "perl" : "5.010"
          }
       }
    },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/plicease/ffi-util/issues"
+         "web" : "https://github.com/plicease/FFI-Util/issues"
       },
-      "homepage" : "http://perl.wdlabs.com/FFI-Util/",
+      "homepage" : "http://perl.wdlabs.com/FFI-Util",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/plicease/ffi-util.git",
-         "web" : "https://github.com/plicease/ffi-util"
+         "url" : "git://github.com/plicease/FFI-Util.git",
+         "web" : "https://github.com/plicease/FFI-Util"
       }
    },
-   "version" : "0.07"
+   "version" : "0.08"
 }
 

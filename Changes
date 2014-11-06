@@ -1,5 +1,10 @@
 Revision history for FFI-Util
 
+0.08      2014-11-06 08:23:37 -0500
+  - add support for 64 bit Strawberry Perl
+  - Use function call instead of function dispatch for very slight
+    performance improvement
+
 0.07      2014-04-01 11:06:58 -0400
   - documentation tweaks
 

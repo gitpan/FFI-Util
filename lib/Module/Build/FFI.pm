@@ -13,7 +13,7 @@ use File::ShareDir qw( dist_dir );
 use Text::ParseWords qw(shellwords);
 
 # ABSTRACT: Build Perl extensions if C with FFI.
-our $VERSION = '0.07'; # VERSION
+our $VERSION = '0.08'; # VERSION
 
 
 sub new
@@ -140,7 +140,7 @@ Module::Build::FFI - Build Perl extensions if C with FFI.
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
